@@ -34,7 +34,7 @@ public String getMatricule()
 return matricule;
 }
 
-public String dateAdmission()
+public String getDateAdmission()
 {
 return dateAdmission;
 }
@@ -44,21 +44,63 @@ public int getHeuresAbsence()
 return heuresAbsence;
 }
 
-
+public void setHeuresAbsence(int heuresAbsence)
+{
+this.heuresAbsence = heuresAbsence;
+}
 }
 
 class RapportAbsences
 {
-
+public List<Etudiant> genererRapport(List<Etudiant> etudiants)
+{
+List<Etudiant> etudiantsARenvoyer = new ArrayList<>();
+for (Etudiant etudiant : etudiants)
+{
+if (etudiant.getHeuresAbsence() > 30)
+{
+etudiantsARenvoyer.add(etudiant);
+}
+}
+return etudiantsARenvoyer;
+}
 }
 
 class Coordonnateur
 {
+private RapportAbsences rapportAbsences;
 
+public Coordonnateur()
+{
+this.rapportAbsences = new RapportAbsences();
+}
+public void consulterEtudiantsARenvoyer(List<Etudiant> etudiants)
+{
+List<Etudiant> etudiantsARenvoyer = rapportAbsences.genererRapport(etudiants);
+System.out.printIn("Rapport des étudiants à renvoyer :");
+if (etudiantsARenvoyer.isEmpty())
+{
+System.out.printIn("Aucun étudiants  à renvoyer")
+}
+else
+{
+System.out.printIn("Nom: " + etudiant.getNom() + " " + etudiant.getPrenom() + ", Matricule: " + etudiant.getMatricule() + ", Date d'admission: " + etudiant.getDateAdmission() + ", Heures d'absence: " + etudiant.getHeuresAbsence());
+}
+}
 }
 
 
 public class main
 {
+public static void main(String[] args)
+{
+List<Etudiant> etudiants = new ArrayList<>();
+etudiants.add(new Etudiant("Ouellet", "Jeremy", "OUEJ11090000", "12 Avril 1987", 80));
+etudiants.add(new Etudiant("Renaud", "Emeric", "RENE05030000", "8 Aout 2016", 12));
+etudiants.add(new Etudiant("Bolduc", "Simon-Olivier", "BOLS01100300", "4 Mars 2025", 20));
 
+Coordonnateur coordonnateur= new Coordonnateur();
+
+coordonnateur.consulterEtudiantsARenvoyer(etudiants);
+}
 }
