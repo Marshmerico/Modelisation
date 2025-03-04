@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Etudiant
+{
+private string nom;
+private string prenom;
+
+}
+
+class RapportAbsences
+{
+
+}
+
+class Coordonnateur
+{
+
+}
+
+
+public class main
+{
+
+}
