@@ -18,9 +18,30 @@ this.matricule = matricule;
 this.dateAdmission = dateAdmission;
 this.heuresAbsence = heuresAbsence;
 }
-public string getNom()
+
+public String getNom()
 {
 return nom;
+}
+
+public String getPrenom()
+{
+return prenom;
+}
+
+public String getMatricule()
+{
+return matricule;
+}
+
+public String dateAdmission()
+{
+return dateAdmission;
+}
+
+public int getHeuresAbsence()
+{
+return heuresAbsence;
 }
 
 
