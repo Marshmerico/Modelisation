@@ -3,8 +3,26 @@ import java.util.List;
 
 class Etudiant
 {
-private string nom;
-private string prenom;
+private String nom;
+private String prenom;
+private String matricule;
+private String statut;
+private String dateAdmission;
+private int heuresAbsence;
+
+public Etudiant(String nom, String prenom, String matricule, String dateAdmission, int heuresAbsence)
+{
+this.nom = nom;
+this.prenom = prenom;
+this.matricule = matricule;
+this.dateAdmission = dateAdmission;
+this.heuresAbsence = heuresAbsence;
+}
+public string getNom()
+{
+return nom;
+}
+
 
 }
 
